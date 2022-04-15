@@ -1,0 +1,42 @@
+<app-navbar></app-navbar>
+<div class="panel panel-primary">
+
+
+ <a href="/addUser"  class="btn1">
+
+    <fa-icon class="icon" [icon]="faPlus"></fa-icon> Ajouter Utilisateur</a>
+
+  
+    <div class="table-responsive p-3">
+        <table class="table align-items-center table-flush table-hover" id="dataTableHover">
+          <thead class="thead-light" style="background-color: #2199e8; color: white;">
+            <tr>
+                <td>Id</td>
+                <td >Username</td>
+                <td>Email</td>
+                <td >Role</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+   
+        <tbody class="body" *ngFor="let user of users |  async  | paginate:{itemsPerPage:6, currentPage:p};"   >
+            <tr>
+                
+                <td>{{user.id}}</td>
+                <td>{{user.username}}</td>
+                <td>{{user.email}}</td>
+                <td *ngFor="let x of user.roles">{{x.name}}</td>
+
+                <td><button (click)="deleteUser(user.id)" class="btn btn-danger"><fa-icon class="icon" [icon]="faTrash" ></fa-icon> Delete</button>
+                    <button (click)="updateUser(user.id)" class="btn btn-primary" ><fa-icon class="icon" [icon]="faPencilAlt" ></fa-icon> Update</button>
+                    <button (click)="detailsUser(user.id)" class="btn btn-info" ><fa-icon class="icon" [icon]="faEye" ></fa-icon>  Details</button>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+    <pagination-controls class="paginate" (pageChange) = "p = $event"></pagination-controls>
+   
+</div>
+</div>
+

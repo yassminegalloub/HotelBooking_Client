@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      *{
+    padding: 0;
+    margin:0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    
+
+
+}
+body{
+    font-family: 'Quicksand';
+}
+/*Dashboard admin***********************/
+
+
+.row{
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-right: 9%;
+  display: flex ;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-flow:wrap ;
+}
+.card{
+    width: 20%;
+ 
+    margin-left: 30px;
+    border: 1px solid #ccc;
+    margin-bottom: 50px ;
+    transition: 0.3s;
+    border-radius: 25px;
+    line-height: 2em;
+    text-transform: uppercase;
+    margin-left: 50px;
+    letter-spacing: 0.4em;
+    text-align: center;
+    padding: 50px 15px;
+    background:
+#4484cc;
+    color: #fff;
+    
+}
+.card:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 40px -10px rgb(0, 0, 0, 0.25);
+}
+.name{
+  font-size:23px ;
+  color: #D3DEDC;
+  text-decoration: none;
+}
+.image{
+  width: 60px;
+  height: 60px;
+}
+.logout{
+  text-decoration: none;
+  color:
+#4484cc;
+  font-size: 20px;
+position: relative;
+}
+/*responsive media  */
+@media  screen and (max-width:1000px) {
+    .card{
+        width: 40%;
+    }
+    
+}
+
+@media  screen and (max-width:620px) {
+    .container{
+        width: 100% ;
+    }
+  
+    .icons{
+     
+        
+    margin-left: 40px;
+       
+    }
+    .card{
+        width: 60%;
+        height: 50%;
+    }
+    .name{
+        padding: 20px;
+        font-size:20px ;
+        
+    }
+    
+}
+    </style>
+  </head>
+
+
+<body>
+
+
+ 
+    <app-navbar></app-navbar>
+  
+
+    
+  <div class="row">
+
+     <div class="card">
+         <span><img class="image"  src="assets/images/users.png"/></span>
+      <a href="/userList" class="name">Users</a>
+     </div>
+
+     <div class="card">
+        <span><img class="image" src="assets/images/activity.png"/></span>
+          <a href="/userList" class="name">Activities</a>
+     </div>
+
+     <div class="card">
+        <span><img class="image" src="assets/images/event.png"/></span>
+          <a href="#" class="name">Events</a>
+    </div>
+  
+    <div class="card">
+        <span><img class="image" src="assets/images/restaurant.png"/></span>
+          <a href="#" class="name">Products</a>
+    </div>
+
+    <div class="card">
+        <span><img class="image" src="assets/images/catalogue.png"/></span>
+          <a href="#" class="name">Catalog</a>
+    </div>
+  
+    <div class="card">
+        <span><img class="image" src="assets/images/aboutus.png"/></span>
+          <a href="#" class="name">About </a>
+    </div>
+
+     
+    <div class="card">
+        <span><img class="image" src="assets/images/contactus.png"/></span>
+          <a href="contacts" class="name">Contact </a>
+    </div>
+
+    <div class="card">
+        <span><img class="image" src="assets/images/discussion.png"/></span>
+          <a href="#" class="name">Message</a>
+    </div>
+ </div>
+
+
+</body>
+</html>

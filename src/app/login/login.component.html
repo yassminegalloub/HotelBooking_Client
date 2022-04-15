@@ -1,0 +1,38 @@
+
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+      <h2 class="active">  </h2>
+    
+  
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img src="assets/template_user/image/marina.png" id="icon"  />
+      </div>
+  
+      <!-- Login Form -->
+      <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+        <input type="text" id="login" class="fadeIn second" name="username" placeholder="Nom d'utilisateur"  [(ngModel)]="form.username" required #username="ngModel">
+        <div class="alert alert-danger"  role="alert" *ngIf="f.submitted && username.invalid" ><i class="bi bi-exclamation-circle"></i>  Username is required!</div>
+        <input type="password" id="password" class="fadeIn third" name="password" placeholder="Mot de passe" [(ngModel)]="form.password" required minlength="6" #password="ngModel">
+        <div class="alert alert-danger" role="alert" *ngIf="f.submitted && password.invalid"><i class="bi bi-exclamation-circle"></i>
+          <div *ngIf="password.errors.required">Password is required</div>
+          <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+        </div>
+        <input type="submit" class="fadeIn fourth" value="Connecter">
+        <div class="form-group">
+        
+          <div class="alert alert-danger"  *ngIf="f.submitted && isLoginFailed"><i class="bi bi-exclamation-circle"></i>
+            Login failed: {{ errorMessage }}
+          </div>
+        </div>
+      </form>
+  
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" href="forgot-password">Mot de passe oublier?</a>
+      </div>
+  
+    </div>
+  </div>
+  

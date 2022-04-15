@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    *{
+    padding: 0;
+    margin:0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    
+  
+  
+  }
+  body{
+    font-family: 'Quicksand';
+  }
+  nav{
+    text-decoration: none;
+    background: #808080;  
+    background: -webkit-linear-gradient(to right, #3fada8, #808080);  
+    background: linear-gradient(to right, #3fada8, #808080); 
+    height: 80px ;
+    width: 100%; 
+  }
+  label.logo{
+    color: white;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold; 
+  }
+  img{
+    font-size: 50px; 
+  }
+  nav ul {
+    float: right;
+    margin-right: 20px;
+  }
+  nav ul li {
+    font-family: 'Quicksand';
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+  }
+  nav ul li a {
+    color: white;
+    padding: 29px 20px ;
+    border-radius: 5px;
+    font-size: 17px ;
+    text-transform: uppercase;
+  }
+  a.active,a:hover {
+    text-decoration: none;
+    background-image:  linear-gradient(to right, #616161 0%, #9bc5c3  51%, #616161  100%);
+    font-weight: bold; 
+  }
+  
+  .checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px ;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+  }
+  #check{
+    display: none;
+  
+  
+  }
+  @media (max-width: 952px){
+    label.logo{
+        font-size: 30px ;
+        padding-left: 50px;
+        
+    }
+    nav ul li a {
+        font-size: 16px;
+        color: white;
+        font-family: 'Quicksand';
+  
+    }
+   
+   
+  }
+  @media (max-width: 858px){
+    
+    .checkbtn{
+        display: block;
+      
+    } 
+    
+    ul{
+        position: fixed;
+        width:100%;
+        height: 100vh;
+        top: 80px ;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav ul li{
+        
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav ul li a{
+       
+        font-size: 20px;
+  
+    }
+    a:hover, a.active{
+        background: none;
+        text-decoration: none;
+        background-image:  linear-gradient(to right, #616161 0%, #9bc5c3  51%, #616161  100%)
+    }
+    #check:checked ~ ul{
+        left: 0;
+        background-color: #556270;
+    }
+  }
+  .image{
+    padding:50px ;
+    position: absolute;
+    top:50%;
+    left:50%;
+    right: 50%;
+    bottom: 50%;
+  }
+  html, body { height: 100%; }
+  .image1{
+    width:450px;
+    height: 450px;
+    position: absolute;
+    top:0%;
+    right: 450px;
+    display: block ;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  
+  }
+  .box{
+   width:450px;
+   height: 450px;
+   padding:50px ;
+   position: absolute;
+   top:50%;
+   right: 90px;
+  
+   border-top-right-radius: 24px;
+   border-bottom-right-radius: 24px;
+   transform: translate(-50%, -50%);
+   background: #bdc3c7;  
+   background: #808080;  
+   background: -webkit-linear-gradient(to right, #3fada8, #808080); 
+   background: linear-gradient(to right, #3fada8, #808080); 
+   
+   
+   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  }
+  .box input[type="text"], .box input[type="password"] ,.box input[type="email"]
+  {
+    border:0;
+    background: none;
+    display: block ;
+    margin: 20px auto ;
+    text-align: center;
+    border: 3px solid white;
+    padding: 14px 10px;
+    width: 220px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25px;
+  }
+  ::placeholder {
+    color: white;
+    font-family: 'Quicksand';
+  }
+  .btn {background-image: linear-gradient(to right, #616161 0%, #9bc5c3  51%, #616161  100%)}
+  .btn {
+    font-family: 'Quicksand';
+   display: block ;
+   margin: 20px auto ;
+   padding: 15px 45px;
+   text-align: center;
+   text-transform: uppercase;
+   outline: none;
+   background-size: 200% auto;
+   color: white;            
+   border: 3px solid white;
+   border-radius: 24px;
+   transition: 0.25px;
+   cursor: pointer;
+  }
+  
+  
+  
+  .btn:hover {
+   background-position: right center;
+   color: #fff;
+   border-radius: 24px;
+   text-decoration: none;
+  }
+  .icon{
+    
+    font-size: 25px;
+    color: white;  
+    position: relative; 
+    left: 0;
+  }
+  .icon1{
+    font-size: 25px;
+    color: white;  
+    position: relative; 
+    left: 0;
+  }
+  .icon2{
+    font-size: 25px;
+    color: white;  
+    position: relative; 
+    left: 0;
+  }
+  .fa{
+    font-size: 20px;
+    color: white;  
+    position: relative; 
+    left: 0;
+  }
+  
+  .user
+  {        
+    justify-content: center;
+    align-items: center;
+    display: flex; 
+    position:relative;
+  
+  }
+  .user i
+  {
+  left: 170%;
+  } 
+  .email{
+    justify-content: center;
+    align-items: center;
+    display: flex; 
+    position:relative;
+  }
+  .password
+  {
+    justify-content: center;
+    align-items: center;
+    display: flex; 
+  }
+  .password i{
+    left: 170%;   
+  }
+  .image2{
+    width: 100px;
+    position: absolute;
+    top:-50px ;
+    left: calc(50% - 50px);
+    border-radius: 50%;
+   
+  
+  }
+  .link{
+    justify-content: center;
+    align-items: center;
+    display: flex;  
+    font-family:'Quicksand' ;
+    color: white;
+    font-size: 20px;
+  }
+  .link1{
+    color: white;
+  }
+  .link1:hover{
+    color: white;
+    background-image: none;
+  }
+  .erreur{
+    text-align: center;
+  }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+   
+    </div>
+    <form class="box" *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+      <img class="image1" src="assets/images/img.jpg" alt="">
+      <img class="image2" src="assets/images/avatar0.png" alt="">
+      <div class="user">
+        <label class="icon" ><fa-icon [icon]="faUser"></fa-icon></label>
+        <input type="text"  name="username" placeholder="Username" [(ngModel)]="form.username" required minlength="3" maxlength="20" #username="ngModel"/>
+        <div class="erreur" *ngIf="f.submitted && username.invalid">
+          <div *ngIf="username.errors.required">Username is required</div>
+          <div *ngIf="username.errors.minlength">Username must be at least 3 characters</div>
+          <div *ngIf="username.errors.maxlength">  Username must be at most 20 characters</div>
+        </div>
+      </div>
+      <div class="email">
+        <label class="icon1"><fa-icon [icon]="faEnvelope"></fa-icon></label>
+        <input type="email"    name="email" placeholder="Email" [(ngModel)]="form.email"  required  email #email="ngModel" />
+        <div class="erreur" *ngIf="f.submitted && email.invalid">
+          <div *ngIf="email.errors.required">Email is required</div>
+          <div *ngIf="email.errors.email"> Email must be a valid email address</div>
+        </div>
+      </div>
+      <div class="password">
+        <label class="icon2"><fa-icon [icon]="faLock"></fa-icon></label>
+        <input type="password"  name="password" placeholder="Password" [(ngModel)]="form.password" required minlength="6" #password="ngModel" />
+        <div class="erreur" *ngIf="f.submitted && password.invalid">
+          <div *ngIf="password.errors.required">Password is required</div>
+          <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+        </div>
+      </div>
+      <div class="">
+        <button class="btn">Sign Up</button>
+      </div>
+
+      <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+        Signup failed!<br />{{ errorMessage }}
+      </div>
+    </form>
+
+    <div class="alert alert-success" *ngIf="isSuccessful">
+      Your registration is successful!
+    </div>
+  </div>
+
+</body>
+</html>
+

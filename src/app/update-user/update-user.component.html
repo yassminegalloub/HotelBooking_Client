@@ -1,0 +1,28 @@
+<img src="/assets/template_user/image/Logo.png" class="logo" alt="">
+
+
+<div style="width: 400px;">
+  <form (ngSubmit)="onSubmit()" class="box">
+    <div class="header">
+    <h3 class="title">Update User</h3>
+    </div>
+    <hr />
+    <div class="form-group">
+      <label class="icon" ><fa-icon [icon]="faUser"></fa-icon></label>
+      <input type="text" class="form-control" id="firstName" required [(ngModel)]="user.username" name="username">
+    </div>
+
+    <div class="form-group">
+        <label class="icon"><fa-icon [icon]="faEnvelope"></fa-icon></label>
+      <input type="email" class="form-control" id="lastName" required [(ngModel)]="user.email" name="email">
+    </div>
+
+    <div class="form-group">
+        <label class="icon"><fa-icon [icon]="faLock"></fa-icon></label>
+      <input type="password" class="form-control" id="emailId" required [(ngModel)]="user.password" name="password">
+    </div>
+
+    <button type="submit" class="btn">Submit</button>
+    <button (click)="gotoList()"  class="btn "> Back</button>
+  </form>
+</div>

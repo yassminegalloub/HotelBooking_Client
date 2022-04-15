@@ -1,0 +1,56 @@
+
+
+
+<header class="navbar-trans">
+  <div class="header_area">
+ <div class="container">
+
+     <nav class="navbar navbar-expand-lg navbar-light">
+         <a class="navbar-brand logo_h" href="index.html"><img src="/assets/template_user/image/Logo.png" alt=""></a>
+         
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </button>
+
+         <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+             <ul class="nav navbar-nav menu_nav ml-auto">
+              <li class="nav-item active" *ngIf="showAdminBoard">
+                <a  class="nav-link" href="/dashboard">Dashboard <span class="sr-only">(current)</span></a>
+              </li>
+             
+                 <li class="nav-item active"  *ngIf="!showAdminBoard"><a class="nav-link" href="home">Home</a></li> 
+                 <li class="nav-item" *ngIf="!showAdminBoard"><a  class="nav-link" href="offres">Offres spéciales</a></li>
+                 <li class="nav-item" *ngIf="!showAdminBoard"><a class="nav-link" href="accomodation">Chambres ET Suites</a></li>
+                
+                <li class="nav-item"  *ngIf="!showAdminBoard"><a class="nav-link" href="contacts">Contact</a></li>
+                <li class="nav-item" *ngIf="showAdminBoard"><a class="nav-link" href="/profile"> <fa-icon class="user"[icon]="faUser"></fa-icon> {{username}}</a></li>
+
+                <li class="nav-item dropdown" *ngIf="!showAdminBoard && isLoggedIn">
+                    <a class="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <fa-icon class="user"[icon]="faUser"></fa-icon>  {{username}}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown"  >
+                        <li class="nav-item" *ngIf="isLoggedIn"> <a  class="dropdown-item" href="/profile" > Profile</a></li>
+                          <div class="dropdown-divider"></div>
+                          <li class="nav-item" *ngIf="isLoggedIn"> <a  class="dropdown-item" href="#" (click)="logout()" > Logout</a></li>
+
+                    </div>
+                  </li>
+                  <li class="nav-item" *ngIf="isLoggedIn && showAdminBoard"><a class="nav-link" href="#" (click)="logout()">Logout</a></li>
+
+                 <li class="nav-item" *ngIf="!isLoggedIn"><a class="nav-link" href="login">Login</a></li>
+             
+             </ul>
+         </div> 
+     </nav>
+ </div>
+ </div>
+</header>
+
+
+
+
+    
+   

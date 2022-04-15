@@ -1,0 +1,51 @@
+<img src="/assets/template_user/image/Logo.png" class="logo" alt="">
+
+<div class="box">
+  <div class="header">
+    <h3 class="title">Create User</h3>
+  </div>
+  <div [hidden]="submitted" style="width: 400px;">
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label class="icon">
+          <fa-icon [icon]="faUser"></fa-icon> 
+        </label>
+        <input type="text" class="form-control" id="username" placeholder="Username" required
+          [(ngModel)]="user.username" name="username">
+      </div>
+
+      <div class="form-group">
+        <label class="icon">
+          <fa-icon [icon]="faEnvelope"></fa-icon>
+        </label>
+        <input type="email" class="form-control" id="email" placeholder="Email" required [(ngModel)]="user.email"
+          name="email">
+      </div>
+
+      <div class="form-group">
+        <label class="icon">
+          <fa-icon [icon]="faLock"></fa-icon>
+        </label>
+        <input type="password" class="form-control" id="password" placeholder="Password" required
+          [(ngModel)]="user.password" name="password">
+      </div>
+
+      <div class="form-group">
+        
+          <label><h3>Selectionnez le role:</h3></label>
+       
+        <select class="form-control" name="idrol">
+          <option [ngValue]="null" disabled>Selectionnez le role</option>
+          <option *ngFor="let role of roles | async" [Value]="role.id">{{role.name}}</option>
+        </select>
+      </div>
+      <button type="submit" class="btn">Submit</button>
+      <button (click)="gotoList()" class="btn "> Back</button>
+    </form>
+  </div>
+
+  <div [hidden]="!submitted">
+    <h4>You submitted successfully!</h4>
+
+  </div>
+</div>
